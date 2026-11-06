@@ -35,3 +35,6 @@ One eligible verified outcome produces at most one credit. Ledger entries are ap
 
 ## API safety
 HTTPS, short-lived tokens, device binding, input validation, rate limiting, authorization checks, audit logs, no credentials in telemetry. Publish an OpenAPI contract before implementation.
+
+## Status — 2026-11-07
+Not implemented; this document remains a design baseline only (no server code exists in the repository). Documentation QA on 2026-11-07: relative links intact, no placeholders (report/2026-11-07-agent-sandbox-verification.md). Publish the OpenAPI contract before implementation, as required above.

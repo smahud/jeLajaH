@@ -20,3 +20,6 @@ Lost device: revoke device key and sessions. Compromised controller: rotate keys
 
 ## Documentation/reporting
 Every agent run writes a timestamped root `report/` summary including changes, tests, decisions, risks and next steps. Keep documentation synchronized with code; no deployment claim without test evidence.
+
+## Evidence status — 2026-11-07
+No deployment, observability stack or live operations exist. The sandbox verification ran entirely on localhost inside an ephemeral Linux container and contacted no external systems, users or websites. The documentation/reporting rule above was followed for this execution: see report/2026-11-07-agent-sandbox-verification.md.

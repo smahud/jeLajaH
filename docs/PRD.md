@@ -1,5 +1,5 @@
 # jeLajaH — Product Requirements Document
-Version 1.0 | 2026-11-07 | Status: documentation baseline, not implemented
+Version 1.1 | 2026-11-07 | Status: documentation baseline, not implemented; 2026-11-07 controller-side desktop lab evidence added (see report/), Android P0 still unproven
 
 ## Vision
 jeLajaH is an Android application for consent-based, visible and stoppable authorized browsing tasks. A user registers, accepts versioned Terms of Service and a separate remote-control disclosure, sees a dashboard and presses one primary Start button. Google Chrome Android, if the technical feasibility gate passes, runs tasks through the user's real device and network. A centralized controller orchestrates tasks via an authenticated tunnel. Rewards are transparent, auditable and awarded only for eligible authorized tasks.
@@ -41,6 +41,8 @@ jeLajaH is an Android application for consent-based, visible and stoppable autho
 
 ## Hard P0 technical gate
 Demonstrate Playwright-to-real-Chrome-Android control on a stock non-root device, including setup, reboot persistence, no repeated external ADB dependency, tunnel, browser network identity, Android background restrictions and immediate Stop. Android Chrome debugging is not automatically enabled by a tunnel. If P0 fails, record the incompatibility and revise product scope transparently; do not claim a working one-tap experience.
+
+Status 2026-11-07: P0 has not been executed on any Android device. Only a controller-side desktop lab reference exists (report/2026-11-07-agent-sandbox-verification.md); the gate remains closed.
 
 ## Acceptance criteria
 - Consent and task authorization are auditable.

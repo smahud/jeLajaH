@@ -26,5 +26,13 @@ B-05 Regions, user age eligibility, retention duration, identity verification an
 B-06 Is use permitted while screen is locked? Default: **no** until technically and policy justified.
 B-07 Is remote controller hosted on private PC or cloud/VPS? Both conceptually possible; pick one MVP topology.
 
+## Evidence notes — 2026-11-07 sandbox verification
+- H-01, H-02: unchanged, still BLOCKED. The sandbox run exercised desktop Chromium only; no Android hardware was present (no adb, no SDK, no device).
+- H-03: unchanged, UNVERIFIED — no Android device available to test reboot, screen-lock or background behavior.
+- H-04: controller side partially informed — Playwright 1.57.0 drove desktop Chromium 143 over CDP with the full adapter action set (8/8 steps, report/2026-11-07-agent-sandbox-verification.md). Reliability on Android Chrome remains UNVERIFIED.
+- H-05: not tested — no Android network capture is possible in this environment.
+- H-06: not tested — no Android device available.
+- Recorded fact: Playwright 1.57.0 ships no public `android` API (only an internal experimental `_android` export), and Android device enumeration requires the adb server (default port 5037). An app-local bridge must not assume first-class Playwright Android support.
+
 ## Decision discipline
 Do not fill unresolved items with guesses. A feature is not VERIFIED because code was written. All changes need owner, date, rationale, alternatives, impact and acceptance evidence. If Chrome P0 fails, halt Chrome-specific implementation and request scope decision rather than silently switching browser.

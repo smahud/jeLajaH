@@ -1,0 +1,55 @@
+{
+  "phase": "pre",
+  "experiment": "jeLajaH sandbox environment inventory + documentation QA",
+  "environment": {
+    "timestamp": "2026-11-06T22:03:36",
+    "platform": "Linux-5.10.134-013.15.kangaroo.al8.x86_64-x86_64-with-glibc2.41",
+    "kernel": "5.10.134-013.15.kangaroo.al8.x86_64",
+    "os": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "python": "3.12.16",
+    "node": "v24.22.2",
+    "npm": "11.19.1",
+    "adb_on_path": null,
+    "ANDROID_HOME": null,
+    "ANDROID_SDK_ROOT": null,
+    "android_device_or_emulator": "none (no adb, no SDK, no emulator)",
+    "playwright_browser_cache": [
+      ".links",
+      "chromium-1200",
+      "chromium_headless_shell-1200",
+      "ffmpeg-1011"
+    ]
+  },
+  "docs_qa": {
+    "markdown_files": [
+      "CONTRACT.md",
+      "README.md",
+      "docs/ANDROID.md",
+      "docs/API_AND_DATA.md",
+      "docs/ARCHITECTURE.md",
+      "docs/CHROME_FEASIBILITY.md",
+      "docs/CONTRACT.md",
+      "docs/DECISIONS_AND_ASSUMPTIONS.md",
+      "docs/DELIVERY_PLAN.md",
+      "docs/INDEX.md",
+      "docs/OPERATIONS_AND_COMPLIANCE.md",
+      "docs/PRD.md",
+      "docs/RISK_REGISTER.md",
+      "docs/SECURITY_AND_REWARDS.md",
+      "docs/TASK_POLICY.md",
+      "docs/TEST_AND_ACCEPTANCE.md",
+      "docs/TRACEABILITY.md"
+    ],
+    "relative_links_checked": 14,
+    "broken_relative_links": [],
+    "external_links_count": 0,
+    "external_links": [],
+    "placeholders_found": [
+      {
+        "file": "CONTRACT.md",
+        "pattern": "to be filled",
+        "count": 1
+      }
+    ]
+  }
+}

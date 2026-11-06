@@ -10,3 +10,6 @@
 8. Do not deploy, trigger live tasks or initiate externally visible browsing without explicit authorization and required checks.
 9. Run automated tests where possible, distinguish untested from passed, and record honest failure evidence.
 10. When P0 fails, stop dependent implementation and request an explicit product decision.
+
+## Execution log
+- 2026-11-07: sandbox verification executed under this contract — dated report with evidence at report/2026-11-07-agent-sandbox-verification.md; root CONTRACT.md placeholder fixed; no credentials committed; no external browsing triggered; untested items were left unmarked.

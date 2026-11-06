@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jeLajaH P0 Local Authorized Test Page</title>
+<style>
+  body { font-family: sans-serif; margin: 2rem; color: #222; }
+  .box { padding: 1rem; border: 1px solid #888; margin: .5rem 0; border-radius: 6px; }
+  #tall { height: 3000px; background: linear-gradient(#eef, #cce); padding-top: 1rem; }
+  button { font-size: 1.2rem; padding: .6rem 1.2rem; }
+  .hidden { display: none; }
+  code { background: #f4f4f4; padding: .1rem .3rem; }
+</style>
+</head>
+<body>
+<h1 id="title">jeLajaH P0 Local Test Target</h1>
+<p>Local analog of an operator-authorized test site. Served from 127.0.0.1 only.</p>
+<p>Status: <span id="status">initial</span></p>
+<p>Counter: <span id="counter">0</span></p>
+<button id="load-more" onclick="loadMore()">Load more (tap target)</button>
+<div id="extra" class="hidden box">Extra content revealed after tap #1 (state change verified by controller).</div>
+<div id="tall">Tall region for scroll verification. <code>window.scrollY</code> is read after scrolling.</div>
+<p id="bottom">bottom-anchor</p>
+<script>
+  let n = 0;
+  function loadMore() {
+    n++;
+    document.getElementById('counter').textContent = n;
+    document.getElementById('status').textContent = 'tapped x' + n;
+    if (n >= 1) document.getElementById('extra').classList.remove('hidden');
+  }
+  window.addEventListener('load', () => {
+    document.getElementById('status').textContent = 'loaded';
+  });
+</script>
+</body>
+</html>

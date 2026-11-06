@@ -1,0 +1,114 @@
+{
+  "experiment": "jeLajaH P0 Track D/E desktop lab analog — controller attaches to real Chromium over a CDP endpoint",
+  "date": "2026-11-06T22:08:52.630Z",
+  "environment": {
+    "platform": "Linux x86_64 (Debian 13 sandbox container)",
+    "node": "v24.22.2",
+    "playwright": "1.57.0",
+    "chromiumExecutable": "/home/z/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome",
+    "androidDevicePresent": false,
+    "adbPresent": false
+  },
+  "topology": {
+    "authorizedTestSite": "http://127.0.0.1:8099 (local analog of operator-authorized site)",
+    "browserHost": "separate OS process, real Chromium, --remote-debugging-port=9222, non-default user-data-dir",
+    "controller": "separate OS process (p0_v1_controller.js), attach only via chromium.connectOverCDP(http://127.0.0.1:9222)",
+    "note": "localhost stands in for the authenticated tunnel; browser traffic to the test site is direct from the browser process"
+  },
+  "cdpEndpoint": {
+    "url": "http://127.0.0.1:9222",
+    "browser": "Chrome/143.0.7499.4",
+    "protocolVersion": "1.3",
+    "webSocketDebuggerUrlHost": "127.0.0.1"
+  },
+  "browserHostLogExcerpt": [
+    "DevTools listening on ws://127.0.0.1:9222/devtools/browser/f3ea6788-a2ba-449c-ba72-9ffa19165a58"
+  ],
+  "controllerExitCode": 0,
+  "controllerResult": {
+    "experiment": "controller-side BrowserAdapter lab analog over CDP",
+    "controllerPid": 2062,
+    "totalMs": 1229,
+    "allPassed": true,
+    "steps": [
+      {
+        "step": "connectOverCDP",
+        "ok": true,
+        "ms": 45,
+        "observed": {
+          "endpoint": "http://127.0.0.1:9222",
+          "connected": true,
+          "contexts": 1
+        }
+      },
+      {
+        "step": "openAuthorizedUrl",
+        "ok": true,
+        "ms": 60,
+        "observed": {
+          "url": "http://127.0.0.1:8099/index.html",
+          "status": 200,
+          "allowlistChecked": true
+        }
+      },
+      {
+        "step": "inspectState#1",
+        "ok": true,
+        "observed": {
+          "title": "jeLajaH P0 Local Authorized Test Page",
+          "status": "loaded",
+          "counter": 0,
+          "extraVisible": false,
+          "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.0.0 Safari/537.36",
+          "viewport": {
+            "w": 780,
+            "h": 441
+          }
+        }
+      },
+      {
+        "step": "tap+inspectState#2",
+        "ok": true,
+        "ms": 245,
+        "observed": {
+          "status": "tapped x1",
+          "counter": 1,
+          "extraVisible": true
+        }
+      },
+      {
+        "step": "scroll",
+        "ok": true,
+        "ms": 202,
+        "observed": {
+          "scrollY": 1200,
+          "docHeight": 3388
+        }
+      },
+      {
+        "step": "wait(bounded)",
+        "ok": true,
+        "ms": 502,
+        "observed": {
+          "bounded": true
+        }
+      },
+      {
+        "step": "cancel(idempotent)",
+        "ok": true,
+        "observed": {
+          "firstCloseError": null,
+          "secondClose": "no-error"
+        }
+      },
+      {
+        "step": "postCancelCommandRejected",
+        "ok": true,
+        "observed": {
+          "blocked": true,
+          "error": "page.click: Target page, context or browser has been closed"
+        }
+      }
+    ]
+  }
+}

@@ -28,3 +28,12 @@ P0 passes only if real Chrome Android on target non-root devices is remotely con
 
 ## Explicitly prohibited claims
 Do not describe Chrome Android remote CDP, tunnel bootstrap, one-click browser automation or reboot persistence as working until test evidence exists. A browser launched by Intent alone does not satisfy remote control acceptance.
+
+## Verification log — 2026-11-07 sandbox (controller-side lab reference)
+Environment: Debian 13 x86_64 container, Node 24, Playwright 1.57.0, Google Chrome for Testing 143.0.7499.4 (desktop). No adb, no Android SDK, no device — Track A/B device steps and questions 1, 2, 6, 7 could not be executed here and remain open. Evidence and reproducible scripts: report/2026-11-07-agent-sandbox-verification.md.
+
+- **Track D analog:** a controller process attached to a real Chromium through a CDP HTTP endpoint on localhost (standing in for the authenticated tunnel) and executed the full BrowserAdapter action set — openAuthorizedUrl with allowlist prefix check, inspectState, tap, scroll, bounded wait, idempotent cancel — 8/8 steps passed; commands issued after cancel were rejected locally.
+- **Track E:** Playwright 1.57.0 interoperates cleanly with desktop Chromium 143 over CDP. On the Android side, Playwright 1.57.0 exposes no public `android` API — only an internal experimental `_android` export whose device actions (tap, swipe, scroll, shell, installApk, …) operate through the adb server (enumeration fails with `ECONNREFUSED 127.0.0.1:5037` when adb is absent). Chrome page access on a device goes through per-app DevTools sockets surfaced by that adb-backed device API.
+- **Negative control:** `chromium.connectOverCDP` to a port with no DevTools endpoint fails (`ECONNREFUSED`) — a transport alone does not grant CDP access, confirming the fundamental constraint above.
+
+Conclusion: controller-side capability is proven on desktop Linux only. **No P0 exit criterion is satisfied; P0 remains BLOCKED** pending real-device evidence (real non-root Android, real Google Chrome, reboot/tunnel/Stop tests).

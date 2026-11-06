@@ -26,3 +26,6 @@ HTTPS ingress, API/controller process, PostgreSQL, backups, structured logs and 
 
 ## Interfaces
 BrowserAdapter: openAuthorizedUrl, inspectState, tap, scroll, wait, cancel, close. Controller must not request credentials, unrelated tabs or personal content. Every action is traceable to a user-authorized task.
+
+### Interface evidence — 2026-11-07
+The BrowserAdapter contract was exercised end-to-end in a desktop lab: a separate controller process attached to real Chromium 143 over a CDP endpoint and completed all steps against a local allowlisted test page — allowlist prefix enforcement before navigation, state inspection, tap, scroll, bounded wait, idempotent cancel, and local rejection of post-cancel commands (8/8 steps). Interface unchanged; the Android-side bridge remains unproven. Evidence: report/2026-11-07-agent-sandbox-verification.md.

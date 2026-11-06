@@ -17,12 +17,14 @@ This directory is the canonical project specification. Last documentation consol
 12. [DELIVERY_PLAN](DELIVERY_PLAN.md) — phased delivery and execution contract.
 13. [TRACEABILITY](TRACEABILITY.md) — requirements-to-test map and outstanding work.
 
+Execution reports: dated agent runs with evidence are archived under root `report/` — latest: [2026-11-07 sandbox analysis and controller-side lab verification](../report/2026-11-07-agent-sandbox-verification.md).
+
 ## Evidence status legend
 - **DECIDED:** accepted product direction; not proof of implementation.
 - **HYPOTHESIS:** needs reproducible experiment.
 - **BLOCKED:** cannot be treated as shippable until prerequisite succeeds.
 - **UNDECIDED:** requires explicit product/business decision.
-- **VERIFIED:** supported by logged test evidence in repository; no P0 Chrome tests have been verified as of this document.
+- **VERIFIED:** supported by logged test evidence in repository. As of 2026-11-07 the only verified evidence is a controller-side desktop lab run ([report/2026-11-07-agent-sandbox-verification.md](../report/2026-11-07-agent-sandbox-verification.md)); no P0 Chrome-on-Android test has been verified.
 
 ## Change control
 Any architecture or scope change must update the relevant canonical document, decision log, risk register, tests and README links. Do not duplicate contradictory requirements. Every agent execution must create a dated report in root `report/` with results, evidence and unresolved issues. No passwords, tokens, device identifiers or personal data in reports.

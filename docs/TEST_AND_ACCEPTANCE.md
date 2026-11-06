@@ -28,5 +28,12 @@
 ## Evidence requirements
 Each test records date, test owner, device/software versions, prerequisites, steps, expected and actual results, redacted logs, pass/fail and linked issue. Store summaries in `report/`, not personal secrets. Never label an unexecuted test as passed.
 
+## Evidence log — 2026-11-07 sandbox run (report/2026-11-07-agent-sandbox-verification.md)
+No test in this file is marked passed. Honest status after the sandbox run:
+- T01–T06, T08–T10: NOT RUN — no Android device, adb or SDK in the verification environment.
+- T03: desktop analog executed — a controller attached to desktop Chromium over a CDP endpoint and completed openAuthorizedUrl/inspectState/tap/scroll/wait/cancel on a local allowlisted page (8/8 steps). The ADB-on-Android half of T03 could not run, so T03 as specified is NOT passed.
+- T07: NOT RUN as specified (requires real Chrome Android and an operator-owned test site). The desktop-equivalent action sequence passed on a local test page and is archived as lab evidence only.
+- T11–T21: NOT RUN — no product implementation exists.
+
 ## Release gates
 G0 P0 feasibility PASS; G1 consent/security architecture review; G2 API and Android MVP tests; G3 reward integrity and authorized task pilot; G4 legal/distribution and operational readiness. Any critical risk blocks release.

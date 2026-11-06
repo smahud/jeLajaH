@@ -19,3 +19,6 @@ No arbitrary code evaluation from task definitions. No interaction with login/pa
 
 ## Adapter contract
 `BrowserAdapter.openAuthorizedUrl`, `inspectState`, `tap`, `scroll`, `wait`, `cancel`, `close`. Every call checks active session, task policy and deadline; cancellation is immediate and idempotent.
+
+## Evidence note — 2026-11-07
+The adapter contract was demonstrated in a controller-side desktop lab: allowlist prefix enforcement before navigation, inspectState, tap, bounded wait, idempotent cancel, and local rejection of post-cancel commands all passed against a local allowlisted test page (report/2026-11-07-agent-sandbox-verification.md). This is a lab analog only — no authorized task, real Chrome Android session, or reward accounting has run.

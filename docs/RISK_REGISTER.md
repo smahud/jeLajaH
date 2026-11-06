@@ -1,5 +1,5 @@
 # Risk register — live document
-Updated 2026-11-07. Scores: Severity (Critical/High/Medium), Status (Open/Blocked/Mitigating). No risk is closed without evidence.
+Updated 2026-11-07 (evidence log added same date; see report/2026-11-07-agent-sandbox-verification.md). Scores: Severity (Critical/High/Medium), Status (Open/Blocked/Mitigating). No risk is closed without evidence.
 
 | ID | Risk / failure mode | Severity | Status | Mitigation / owner gate |
 |---|---|---|---|---|
@@ -28,6 +28,12 @@ Updated 2026-11-07. Scores: Severity (Critical/High/Medium), Status (Open/Blocke
 | R23 | Unsupported WebView fallback falsely advertised as real Chrome | High | Open | Strict capability check, explicit product decision |
 | R24 | Repository agent makes unsupported claims or implements stealth/ad logic | High | Open | CONTRACT and review gates, docs traceability, tests |
 | R25 | Server outage/database loss loses sessions or reward balances | High | Open | Backups, restore drills, durable events, recovery playbook |
+
+### Evidence notes — 2026-11-07
+- R01, R02: no change (Critical, BLOCKED/Open). Confirmed dependency chain in the sandbox: Playwright 1.57.0 has no public Android API and its internal device API requires the adb server (port 5037); no device was present. No mitigation progress; real-hardware P0 still required.
+- R03: partially informed — Playwright 1.57.0 + desktop Chromium 143 interoperated without issue in the lab; says nothing about Android Chrome upgrades.
+- R06: desktop-side analog only — post-cancel commands were rejected locally; offline Stop on a real device remains untested.
+- R24: documentation QA (link integrity, placeholder scan) executed 2026-11-07; the one placeholder found (an unfilled root CONTRACT.md) was fixed in the same run.
 
 ## Risk response
 Critical unresolved risks prevent production release. P0 failure requires documented scope decision, not silent workaround. Owners, test links and closure dates must be added as work begins.

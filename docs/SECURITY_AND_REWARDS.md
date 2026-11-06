@@ -17,3 +17,6 @@ Task allowlists, action limits, device revocation, replay protection, anomalous-
 
 ## Release gates
 Threat model, permission review, penetration test of tunnel and session isolation, consent revocation test, Stop under network failure, reward reconciliation and incident response runbook.
+
+## Evidence status — 2026-11-07
+No security testing was performed. The sandbox verification used localhost-only endpoints, a throwaway browser profile and no credentials; no tunnel, keys or production systems were involved. One design-relevant observation from the lab: commands issued after cancel were rejected locally by the controller without contacting any server — the desktop analog of local Stop priority. All release gates above remain open. Evidence: report/2026-11-07-agent-sandbox-verification.md.

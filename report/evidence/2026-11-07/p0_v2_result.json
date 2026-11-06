@@ -1,0 +1,63 @@
+{
+  "experiment": "jeLajaH P0 Track B/E — Playwright Android API surface probe (no Android device present)",
+  "date": "2026-11-06T22:08:52.904Z",
+  "environment": {
+    "playwright": "1.57.0",
+    "adbPresent": false,
+    "androidDevicePresent": false
+  },
+  "playwrightPublicExports": [
+    "chromium",
+    "devices",
+    "errors",
+    "firefox",
+    "off",
+    "on",
+    "request",
+    "selectors",
+    "webkit"
+  ],
+  "androidApiPublicExport": false,
+  "androidApiInternalExport": true,
+  "androidDeviceMethods": [
+    "_didClose",
+    "_onWebViewAdded",
+    "_onWebViewRemoved",
+    "close",
+    "drag",
+    "fill",
+    "fling",
+    "info",
+    "installApk",
+    "launchBrowser",
+    "longTap",
+    "model",
+    "open",
+    "pinchClose",
+    "pinchOpen",
+    "press",
+    "push",
+    "screenshot",
+    "scroll",
+    "serial",
+    "setDefaultTimeout",
+    "shell",
+    "swipe",
+    "tap",
+    "wait",
+    "waitForEvent",
+    "webView",
+    "webViews"
+  ],
+  "androidWebViewMethods": [
+    "_fetchPage",
+    "_socketName",
+    "page",
+    "pid",
+    "pkg"
+  ],
+  "cdpAttachWithoutEndpoint": "FAILED as expected — browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:9223",
+  "androidDevicesResult": {
+    "error": "Playwright Android device enumeration crashed trying to reach the adb server: connect ECONNREFUSED 127.0.0.1:5037 — port 5037 is the standard adb server port. Confirms ADB dependency."
+  }
+}

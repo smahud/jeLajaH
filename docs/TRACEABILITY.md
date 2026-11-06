@@ -14,10 +14,11 @@
 | Validated, non-deceptive rewards | SECURITY_AND_REWARDS, API_AND_DATA | T17, T21 | Business rules undecided |
 | User/device isolation | SECURITY_AND_REWARDS | T16 | Planned |
 | Deployment and incident response | OPERATIONS_AND_COMPLIANCE | T20 | Planned |
+| Controller-side adapter contract (lab analog) | ARCHITECTURE, TASK_POLICY | lab analog of T03/T07 (report/2026-11-07) | Desktop lab VERIFIED 2026-11-07; Android pending |
 
 ## Next mandatory actions
 1. Decide domain authorization and reward funding; do not infer either.
-2. Run P0 with real device evidence before implementing Chrome-specific assumptions.
+2. Run P0 with real device evidence before implementing Chrome-specific assumptions. (2026-11-07: controller-side desktop lab evidence recorded in report/2026-11-07-agent-sandbox-verification.md; the real-device P0 run is still pending.)
 3. Resolve architecture and permission constraints discovered in P0.
 4. Implement only the verified scope; maintain risk register and traceability.
 5. Keep all durable product/technical decisions in `docs/` and run reports in `report/`.

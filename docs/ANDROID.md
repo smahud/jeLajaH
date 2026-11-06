@@ -20,3 +20,6 @@ Handle screen lock, app backgrounding, battery optimization, connectivity loss, 
 
 ## Acceptance tests
 First run, consent refusal, permission denial, Start, Stop, rapid double taps, tunnel loss, controller loss, Android app termination, reboot, Chrome update and reward display consistency.
+
+## Evidence status — 2026-11-07
+Not executable in the current verification environment: no Android device, SDK or adb is available (environment inventory in report/2026-11-07-agent-sandbox-verification.md). All Android acceptance tests remain Planned. No Android code exists yet.
